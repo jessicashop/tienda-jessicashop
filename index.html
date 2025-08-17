@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jessica Shop - Tienda Online</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: Arial, sans-serif; background: #fff; color: #333; }
+    header {
+      background: #f48fb1;
+      color: white;
+      padding: 15px;
+      text-align: center;
+    }
+    nav {
+      display: flex;
+      justify-content: center;
+      background: #ec407a;
+    }
+    nav a {
+      color: white;
+      padding: 14px 20px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    nav a:hover { background: #ad1457; }
+    section { padding: 40px; }
+    .productos {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+    }
+    .card {
+      background: #fff0f5;
+      border-radius: 10px;
+      padding: 20px;
+      text-align: center;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    }
+    .card img {
+      width: 100%;
+      border-radius: 10px;
+    }
+    button {
+      margin-top: 10px;
+      padding: 10px 15px;
+      background: #ec407a;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+    button:hover { background: #ad1457; }
+    #carrito {
+      background: #ffe4ec;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    }
+    footer {
+      background: #f48fb1;
+      color: white;
+      text-align: center;
+      padding: 15px;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>✨ Jessica Shop ✨</h1>
+    <p>Accesorios, Maquillaje y Ropa</p>
+  </header>
+
+  <nav>
+    <a href="#productos">Productos</a>
+    <a href="#carrito">Carrito</a>
+    <a href="#contacto">Contacto</a>
+  </nav>
+
+  <section id="productos">
+    <h2>Nuestros Productos</h2>
+    <div class="productos">
+      <div class="card">
+        <img src="https://via.placeholder.com/200" alt="Accesorio">
+        <h3>Collar Rosa</h3>
+        <p>$150 MXN</p>
+        <button onclick="agregarCarrito('Collar Rosa',150)">Agregar al carrito</button>
+      </div>
+      <div class="card">
+        <img src="https://via.placeholder.com/200" alt="Maquillaje">
+        <h3>Labial Mate</h3>
+        <p>$120 MXN</p>
+        <button onclick="agregarCarrito('Labial Mate',120)">Agregar al carrito</button>
+      </div>
+      <div class="card">
+        <img src="https://via.placeholder.com/200" alt="Ropa">
+        <h3>Blusa Casual</h3>
+        <p>$250 MXN</p>
+        <button onclick="agregarCarrito('Blusa Casual',250)">Agregar al carrito</button>
+      </div>
+    </div>
+  </section>
+
+  <section id="carrito">
+    <h2>🛒 Carrito de Compras</h2>
+    <ul id="listaCarrito"></ul>
+    <p><strong>Total: $<span id="total">0</span> MXN</strong></p>
+    <button onclick="finalizarCompra()">Finalizar compra</button>
+  </section>
+
+  <section id="contacto">
+    <h2>Contacto</h2>
+    <p>📩 Escríbeme a: <a href="mailto:jessicashop@gmail.com">jessicashop@gmail.com</a></p>
+    <p>📱 WhatsApp: <a href="https://wa.me/5215512345678" target="_blank">Enviar mensaje</a></p>
+    <p>📷 Instagram: <a href="https://instagram.com/jessica_shop" target="_blank">@jessica_shop</a></p>
+  </section>
+
+  <footer>
+    <p>© 2025 Jessica Shop - Todos los derechos reservados</p>
+  </footer>
+
+  <script>
+    let carrito = [];
+    let total = 0;
+
+    function agregarCarrito(producto, precio) {
+      carrito.push({ producto, precio });
+      total += precio;
+      actualizarCarrito();
+    }
+
+    function actualizarCarrito() {
+      const lista = document.getElementById("listaCarrito");
+      lista.innerHTML = "";
+      carrito.forEach(item => {
+        let li = document.createElement("li");
+        li.textContent = `${item.producto} - $${item.precio} MXN`;
+        lista.appendChild(li);
+      });
+      document.getElementById("total").textContent = total;
+    }
+
+    function finalizarCompra() {
+      if (carrito.length === 0) {
+        alert("Tu carrito está vacío.");
+        return;
+      }
+      let mensaje = "Hola, quiero hacer este pedido:\n";
+      carrito.forEach(item => {
+        mensaje += `- ${item.producto}: $${item.precio} MXN\n`;
+      });
+      mensaje += `Total: $${total} MXN`;
+      window.open(`https://wa.me/5215512345678?text=${encodeURIComponent(mensaje)}`);
+    }
+  </script>
+</body>
+</html>
