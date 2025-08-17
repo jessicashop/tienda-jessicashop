@@ -3,157 +3,145 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Jessica Shop - Tienda Online</title>
-  <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { font-family: Arial, sans-serif; background: #fff; color: #333; }
-    header {
-      background: #f48fb1;
-      color: white;
-      padding: 15px;
-      text-align: center;
-    }
-    nav {
-      display: flex;
-      justify-content: center;
-      background: #ec407a;
-    }
-    nav a {
-      color: white;
-      padding: 14px 20px;
-      text-decoration: none;
-      font-weight: bold;
-    }
-    nav a:hover { background: #ad1457; }
-    section { padding: 40px; }
-    .productos {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 20px;
-    }
-    .card {
-      background: #fff0f5;
-      border-radius: 10px;
-      padding: 20px;
-      text-align: center;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
-    }
-    .card img {
-      width: 100%;
-      border-radius: 10px;
-    }
-    button {
-      margin-top: 10px;
-      padding: 10px 15px;
-      background: #ec407a;
-      color: white;
-      border: none;
-      border-radius: 8px;
-      cursor: pointer;
-    }
-    button:hover { background: #ad1457; }
-    #carrito {
-      background: #ffe4ec;
-      padding: 20px;
-      border-radius: 10px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
-    }
-    footer {
-      background: #f48fb1;
-      color: white;
-      text-align: center;
-      padding: 15px;
-      margin-top: 20px;
-    }
-  </style>
+  <title>Jessica Shop - Maquillaje & Accesorios</title>
+  <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
-  <header>
-    <h1>✨ Jessica Shop ✨</h1>
-    <p>Accesorios, Maquillaje y Ropa</p>
+<body class="bg-pink-50 text-gray-800 font-sans">
+
+  <!-- Header -->
+  <header class="bg-pink-200 shadow-md sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
+      <h1 class="text-2xl font-bold text-pink-700">✨ Jessica Shop ✨</h1>
+      <nav class="space-x-6">
+        <a href="#inicio" class="hover:text-pink-600">Inicio</a>
+        <a href="#maquillaje" class="hover:text-pink-600">Maquillaje</a>
+        <a href="#accesorios" class="hover:text-pink-600">Accesorios</a>
+        <a href="#contacto" class="hover:text-pink-600">Contacto</a>
+      </nav>
+    </div>
   </header>
 
-  <nav>
-    <a href="#productos">Productos</a>
-    <a href="#carrito">Carrito</a>
-    <a href="#contacto">Contacto</a>
-  </nav>
+  <!-- Hero -->
+  <section id="inicio" class="text-center py-20 bg-gradient-to-r from-pink-100 to-pink-200">
+    <h2 class="text-4xl font-bold text-pink-700 mb-4">Belleza que te hace brillar 💖</h2>
+    <p class="text-lg text-gray-700 mb-6">Explora nuestra colección de maquillaje y accesorios exclusivos.</p>
+    <a href="#maquillaje" class="bg-pink-600 text-white px-6 py-3 rounded-full shadow-lg hover:bg-pink-700 transition">
+      Ver Catálogo
+    </a>
+  </section>
 
-  <section id="productos">
-    <h2>Nuestros Productos</h2>
-    <div class="productos">
-      <div class="card">
-        <img src="https://via.placeholder.com/200" alt="Accesorio">
-        <h3>Collar Rosa</h3>
-        <p>$150 MXN</p>
-        <button onclick="agregarCarrito('Collar Rosa',150)">Agregar al carrito</button>
+  <!-- Catálogo Maquillaje -->
+  <section id="maquillaje" class="max-w-7xl mx-auto px-4 py-16">
+    <h3 class="text-3xl font-bold text-center text-pink-700 mb-12">Maquillaje 💄</h3>
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+      
+      <!-- Producto -->
+      <div class="bg-white shadow-lg rounded-2xl overflow-hidden">
+        <img src="https://via.placeholder.com/300x200" alt="Labial" class="w-full">
+        <div class="p-4">
+          <h4 class="text-lg font-semibold">Labial Mate</h4>
+          <p class="text-gray-600">Colores intensos y duraderos.</p>
+          <p class="text-pink-600 font-bold mt-2">$120 MXN</p>
+          <a href="https://wa.me/5215582636465?text=Hola!%20Quiero%20comprar%20el%20Labial%20Mate" target="_blank" class="mt-3 block bg-green-500 text-white px-4 py-2 rounded-lg text-center hover:bg-green-600">Comprar</a>
+        </div>
       </div>
-      <div class="card">
-        <img src="https://via.placeholder.com/200" alt="Maquillaje">
-        <h3>Labial Mate</h3>
-        <p>$120 MXN</p>
-        <button onclick="agregarCarrito('Labial Mate',120)">Agregar al carrito</button>
+
+      <div class="bg-white shadow-lg rounded-2xl overflow-hidden">
+        <img src="https://via.placeholder.com/300x200" alt="Paleta sombras" class="w-full">
+        <div class="p-4">
+          <h4 class="text-lg font-semibold">Paleta de Sombras</h4>
+          <p class="text-gray-600">12 tonos increíbles.</p>
+          <p class="text-pink-600 font-bold mt-2">$250 MXN</p>
+          <a href="https://wa.me/5215555555555?text=Hola!%20Quiero%20comprar%20la%20Paleta%20de%20Sombras" target="_blank" class="mt-3 block bg-green-500 text-white px-4 py-2 rounded-lg text-center hover:bg-green-600">Comprar</a>
+        </div>
       </div>
-      <div class="card">
-        <img src="https://via.placeholder.com/200" alt="Ropa">
-        <h3>Blusa Casual</h3>
-        <p>$250 MXN</p>
-        <button onclick="agregarCarrito('Blusa Casual',250)">Agregar al carrito</button>
+
+      <div class="bg-white shadow-lg rounded-2xl overflow-hidden">
+        <img src="https://via.placeholder.com/300x200" alt="Base líquida" class="w-full">
+        <div class="p-4">
+          <h4 class="text-lg font-semibold">Base Líquida</h4>
+          <p class="text-gray-600">Cobertura perfecta todo el día.</p>
+          <p class="text-pink-600 font-bold mt-2">$180 MXN</p>
+          <a href="https://wa.me/5215555555555?text=Hola!%20Quiero%20comprar%20la%20Base%20Líquida" target="_blank" class="mt-3 block bg-green-500 text-white px-4 py-2 rounded-lg text-center hover:bg-green-600">Comprar</a>
+        </div>
       </div>
+
+      <div class="bg-white shadow-lg rounded-2xl overflow-hidden">
+        <img src="https://via.placeholder.com/300x200" alt="Rímel" class="w-full">
+        <div class="p-4">
+          <h4 class="text-lg font-semibold">Rímel Voluminizador</h4>
+          <p class="text-gray-600">Pestañas largas y definidas.</p>
+          <p class="text-pink-600 font-bold mt-2">$150 MXN</p>
+          <a href="https://wa.me/5215555555555?text=Hola!%20Quiero%20comprar%20el%20Rímel%20Voluminizador" target="_blank" class="mt-3 block bg-green-500 text-white px-4 py-2 rounded-lg text-center hover:bg-green-600">Comprar</a>
+        </div>
+      </div>
+
     </div>
   </section>
 
-  <section id="carrito">
-    <h2>🛒 Carrito de Compras</h2>
-    <ul id="listaCarrito"></ul>
-    <p><strong>Total: $<span id="total">0</span> MXN</strong></p>
-    <button onclick="finalizarCompra()">Finalizar compra</button>
+  <!-- Catálogo Accesorios -->
+  <section id="accesorios" class="max-w-7xl mx-auto px-4 py-16 bg-pink-100">
+    <h3 class="text-3xl font-bold text-center text-pink-700 mb-12">Accesorios 👛</h3>
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+      
+      <div class="bg-white shadow-lg rounded-2xl overflow-hidden">
+        <img src="https://via.placeholder.com/300x200" alt="Collar" class="w-full">
+        <div class="p-4">
+          <h4 class="text-lg font-semibold">Collar Elegante</h4>
+          <p class="text-gray-600">Ideal para cualquier ocasión.</p>
+          <p class="text-pink-600 font-bold mt-2">$180 MXN</p>
+          <a href="https://wa.me/5215555555555?text=Hola!%20Quiero%20comprar%20el%20Collar%20Elegante" target="_blank" class="mt-3 block bg-green-500 text-white px-4 py-2 rounded-lg text-center hover:bg-green-600">Comprar</a>
+        </div>
+      </div>
+
+      <div class="bg-white shadow-lg rounded-2xl overflow-hidden">
+        <img src="https://via.placeholder.com/300x200" alt="Aretes" class="w-full">
+        <div class="p-4">
+          <h4 class="text-lg font-semibold">Aretes Dorados</h4>
+          <p class="text-gray-600">Brillantes y sofisticados.</p>
+          <p class="text-pink-600 font-bold mt-2">$90 MXN</p>
+          <a href="https://wa.me/5215555555555?text=Hola!%20Quiero%20comprar%20los%20Aretes%20Dorados" target="_blank" class="mt-3 block bg-green-500 text-white px-4 py-2 rounded-lg text-center hover:bg-green-600">Comprar</a>
+        </div>
+      </div>
+
+      <div class="bg-white shadow-lg rounded-2xl overflow-hidden">
+        <img src="https://via.placeholder.com/300x200" alt="Bolsa" class="w-full">
+        <div class="p-4">
+          <h4 class="text-lg font-semibold">Bolsa Rosa</h4>
+          <p class="text-gray-600">Estilo y comodidad.</p>
+          <p class="text-pink-600 font-bold mt-2">$350 MXN</p>
+          <a href="https://wa.me/5215555555555?text=Hola!%20Quiero%20comprar%20la%20Bolsa%20Rosa" target="_blank" class="mt-3 block bg-green-500 text-white px-4 py-2 rounded-lg text-center hover:bg-green-600">Comprar</a>
+        </div>
+      </div>
+
+      <div class="bg-white shadow-lg rounded-2xl overflow-hidden">
+        <img src="https://via.placeholder.com/300x200" alt="Diadema" class="w-full">
+        <div class="p-4">
+          <h4 class="text-lg font-semibold">Diadema Floral</h4>
+          <p class="text-gray-600">Perfecta para primavera.</p>
+          <p class="text-pink-600 font-bold mt-2">$70 MXN</p>
+          <a href="https://wa.me/5215555555555?text=Hola!%20Quiero%20comprar%20la%20Diadema%20Floral" target="_blank" class="mt-3 block bg-green-500 text-white px-4 py-2 rounded-lg text-center hover:bg-green-600">Comprar</a>
+        </div>
+      </div>
+
+    </div>
   </section>
 
-  <section id="contacto">
-    <h2>Contacto</h2>
-    <p>📩 Escríbeme a: <a href="mailto:jessicashop@gmail.com">jessicashop@gmail.com</a></p>
-    <p>📱 WhatsApp: <a href="https://wa.me/5215512345678" target="_blank">Enviar mensaje</a></p>
-    <p>📷 Instagram: <a href="https://instagram.com/jessica_shop" target="_blank">@jessica_shop</a></p>
+  <!-- Contacto -->
+  <section id="contacto" class="max-w-7xl mx-auto px-4 py-16 text-center">
+    <h3 class="text-3xl font-bold text-pink-700 mb-6">Contacto</h3>
+    <p class="text-gray-700 mb-4">¡Haz tu pedido o pregunta por WhatsApp o redes sociales!</p>
+    <div class="flex justify-center space-x-6">
+      <a href="https://wa.me/5215555555555" target="_blank" class="bg-green-500 text-white px-5 py-2 rounded-full hover:bg-green-600">WhatsApp</a>
+      <a href="https://www.instagram.com/" target="_blank" class="bg-pink-500 text-white px-5 py-2 rounded-full hover:bg-pink-600">Instagram</a>
+      <a href="https://www.facebook.com/" target="_blank" class="bg-blue-600 text-white px-5 py-2 rounded-full hover:bg-blue-700">Facebook</a>
+    </div>
   </section>
 
-  <footer>
-    <p>© 2025 Jessica Shop - Todos los derechos reservados</p>
+  <!-- Footer -->
+  <footer class="bg-pink-200 text-center py-6 mt-10">
+    <p class="text-gray-700">© 2025 Jessica Shop. Todos los derechos reservados.</p>
   </footer>
 
-  <script>
-    let carrito = [];
-    let total = 0;
-
-    function agregarCarrito(producto, precio) {
-      carrito.push({ producto, precio });
-      total += precio;
-      actualizarCarrito();
-    }
-
-    function actualizarCarrito() {
-      const lista = document.getElementById("listaCarrito");
-      lista.innerHTML = "";
-      carrito.forEach(item => {
-        let li = document.createElement("li");
-        li.textContent = `${item.producto} - $${item.precio} MXN`;
-        lista.appendChild(li);
-      });
-      document.getElementById("total").textContent = total;
-    }
-
-    function finalizarCompra() {
-      if (carrito.length === 0) {
-        alert("Tu carrito está vacío.");
-        return;
-      }
-      let mensaje = "Hola, quiero hacer este pedido:\n";
-      carrito.forEach(item => {
-        mensaje += `- ${item.producto}: $${item.precio} MXN\n`;
-      });
-      mensaje += `Total: $${total} MXN`;
-      window.open(`https://wa.me/5215512345678?text=${encodeURIComponent(mensaje)}`);
-    }
-  </script>
 </body>
 </html>
